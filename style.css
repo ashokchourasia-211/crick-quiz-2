@@ -1,3 +1,4 @@
+/* General body styling */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -8,6 +9,7 @@ body {
     background-color: #f0f0f0;
 }
 
+/* Container for the entire quiz */
 #quiz-container {
     background: white;
     padding: 20px;
@@ -17,10 +19,12 @@ body {
     width: 100%;
 }
 
+/* Main heading style */
 h1 {
     text-align: center;
 }
 
+/* Container for the answer options */
 #options {
     display: flex;
     flex-direction: column;
@@ -28,6 +32,7 @@ h1 {
     margin: 20px 0;
 }
 
+/* Styling for individual option buttons */
 .option {
     padding: 10px;
     border: 1px solid #ccc;
@@ -37,25 +42,30 @@ h1 {
     text-align: left;
 }
 
+/* Hover effect for option buttons */
 .option:hover {
     background: #f9f9f9;
 }
 
+/* Styling for correctly selected options */
 .option.correct {
     background: #d4edda;
     border-color: #c3e6cb;
 }
 
+/* Styling for incorrectly selected options */
 .option.wrong {
     background: #f8d7da;
     border-color: #f5c6cb;
 }
 
+/* Container for displaying the result message */
 #result {
     margin: 20px 0;
     font-weight: bold;
 }
 
+/* Styling for the 'Next' button */
 #next-btn {
     display: block;
     margin: 20px auto;
@@ -67,10 +77,12 @@ h1 {
     cursor: pointer;
 }
 
+/* Hover effect for the 'Next' button */
 #next-btn:hover {
     background: #0056b3;
 }
 
+/* Styling for the score display */
 #score {
     text-align: center;
     font-size: 18px;
