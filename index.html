@@ -7,21 +7,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Main container for the quiz application -->
     <div id="quiz-container">
         <h1>Cricket Quiz</h1>
+
+        <!-- Container for the question and options -->
         <div id="question-container">
             <h2 id="question">Question</h2>
             <div id="options">
-                <button class="option" data-option="a">Option A</button>
-                <button class="option" data-option="b">Option B</button>
-                <button class="option" data-option="c">Option C</button>
-                <button class="option" data-option="d">Option D</button>
+                <!-- Options will be dynamically inserted here -->
             </div>
         </div>
+
+        <!-- Displays feedback to the user (e.g., "Correct!" or "Wrong!") -->
         <div id="result"></div>
+
+        <!-- Button to proceed to the next question -->
         <button id="next-btn" style="display:none;">Next</button>
+
+        <!-- Displays the user's current score -->
         <div id="score">Score: 0/10</div>
     </div>
+
+    <!-- JavaScript file that contains the quiz logic -->
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,3 +1,9 @@
+/**
+ * @const {Array<Object>} questions - An array of question objects for the quiz.
+ * @property {string} question - The question text.
+ * @property {Array<string>} options - An array of possible answers.
+ * @property {string} correct - The correct answer.
+ */
 const questions = [
     {
         question: "How many players are there in a cricket team on the field at any one time?",
@@ -51,15 +57,25 @@ const questions = [
     }
 ];
 
+/** @type {number} - The index of the current question in the `questions` array. */
 let currentQuestionIndex = 0;
+/** @type {number} - The user's current score. */
 let score = 0;
 
+/** @type {HTMLElement} - The element that displays the question. */
 const questionEl = document.getElementById('question');
+/** @type {HTMLElement} - The container for the answer options. */
 const optionsEl = document.getElementById('options');
+/** @type {HTMLElement} - The element that displays the result of an answer. */
 const resultEl = document.getElementById('result');
+/** @type {HTMLButtonElement} - The button to advance to the next question. */
 const nextBtn = document.getElementById('next-btn');
+/** @type {HTMLElement} - The element that displays the user's score. */
 const scoreEl = document.getElementById('score');
 
+/**
+ * @description Loads the current question and its options into the HTML.
+ */
 function loadQuestion() {
     const currentQuestion = questions[currentQuestionIndex];
     questionEl.textContent = currentQuestion.question;
@@ -75,6 +91,11 @@ function loadQuestion() {
     nextBtn.style.display = 'none';
 }
 
+/**
+ * @description Handles the user's selection of an answer, provides feedback, and updates the score.
+ * @param {HTMLButtonElement} button - The button element that was clicked.
+ * @param {string} selectedOption - The text content of the selected option.
+ */
 function selectOption(button, selectedOption) {
     const currentQuestion = questions[currentQuestionIndex];
     const options = document.querySelectorAll('.option');
@@ -96,6 +117,9 @@ function selectOption(button, selectedOption) {
     nextBtn.style.display = 'block';
 }
 
+/**
+ * @description Event listener for the 'Next' button. It advances to the next question or ends the quiz.
+ */
 nextBtn.addEventListener('click', () => {
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
@@ -108,4 +132,5 @@ nextBtn.addEventListener('click', () => {
     }
 });
 
+// Initial load of the first question
 loadQuestion();
